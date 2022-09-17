@@ -1,7 +1,7 @@
 public class Cell {
     public enum content{
         FREE,
-        HOME,
+        HOUSE,
         BLOCK,
         SPICHLERZ,
         SMITHY,
@@ -37,7 +37,7 @@ public class Cell {
     public static void main(String[] args) {
         Cell Test1 = new Cell();
         System.out.println(Test1.toString());
-        Test1.setCellContent(content.HOME);
+        Test1.setCellContent(content.HOUSE);
         System.out.println(Test1.toString());
         content test2;
         test2 = Test1.getCellContent();
