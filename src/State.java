@@ -4,7 +4,7 @@
 public class State {
     private int numberHouse = 1;
     private int numberBlock = 0;
-    private int numberWarhouse = 0;
+    private int numberStorehouse = 0;
     private int numberMill = 0;
     private int numberField = 1;
     private int numberFarm = 0;
@@ -40,13 +40,20 @@ public class State {
                     ", odd=" + odd +
                     '}';
         }
+        //Actually all I will do, is ad 1, so alongside set I need:
+        public void addEven() {
+            this.even += 1;
+        }
+        public void addOdd() {
+            this.odd += 1;
+        }
     }
     private SmithyNumber daySmithy = new SmithyNumber(); //number of times when smith should work on even or odd days
 
     private int foodStock;
     private int maxFood;
-    private int numberVilliger;
-    private int maxNumberVilliger;
+    private int numberVillager;
+    private int maxNumberVillager;
 
     public int getNumberHouse() {
         return numberHouse;
@@ -56,6 +63,10 @@ public class State {
         this.numberHouse = numberHouse;
     }
 
+    public void addHouse() {
+        this.numberHouse +=1;
+    }
+
     public int getNumberBlock() {
         return numberBlock;
     }
@@ -63,13 +74,19 @@ public class State {
     public void setNumberBlock(int numberBlock) {
         this.numberBlock = numberBlock;
     }
-
-    public int getNumberWarhouse() {
-        return numberWarhouse;
+    public void addBlock() {
+        this.numberBlock +=1;
     }
 
-    public void setNumberWarhouse(int numberWarhouse) {
-        this.numberWarhouse = numberWarhouse;
+    public int getNumberStorehouse() {
+        return numberStorehouse;
+    }
+
+    public void setNumberStorehouse(int numberStorehouse) {
+        this.numberStorehouse = numberStorehouse;
+    }
+    public void addStorehouse() {
+        this.numberStorehouse +=1;
     }
 
     public int getNumberMill() {
@@ -80,6 +97,11 @@ public class State {
         this.numberMill = numberMill;
     }
 
+    public void addMill() {
+        this.numberMill +=1;
+    }
+
+
     public int getNumberField() {
         return numberField;
     }
@@ -88,12 +110,20 @@ public class State {
         this.numberField = numberField;
     }
 
+    public void addField() {
+        this.numberField +=1;
+    }
+
     public int getNumberFarm() {
         return numberFarm;
     }
 
     public void setNumberFarm(int numberFarm) {
         this.numberFarm = numberFarm;
+    }
+
+    public void addFarm() {
+        this.numberFarm +=1;
     }
 
     public SmithyNumber getDaySmithy() {
@@ -112,6 +142,11 @@ public class State {
         this.foodStock = foodStock;
     }
 
+    public void addFoodStock(int food) {
+        this.foodStock +=food;
+    }
+
+
     public int getMaxFood() {
         return maxFood;
     }
@@ -120,20 +155,28 @@ public class State {
         this.maxFood = maxFood;
     }
 
-    public int getNumberVilliger() {
-        return numberVilliger;
+    public int getNumberVillager() {
+        return numberVillager;
     }
 
-    public void setNumberVilliger(int numberVilliger) {
-        this.numberVilliger = numberVilliger;
+    public void setNumberVillager(int numberVillager) {
+        this.numberVillager = numberVillager;
     }
 
-    public int getMaxNumberVilliger() {
-        return maxNumberVilliger;
+    public void add2Villager() {
+        this.numberVillager += 2;
     }
 
-    public void setMaxNumberVilliger(int maxNumberVilliger) {
-        this.maxNumberVilliger = maxNumberVilliger;
+    public int getMaxNumberVillager() {
+        return maxNumberVillager;
+    }
+
+    public void setMaxNumberVillager(int maxNumberVillager) {
+        this.maxNumberVillager = maxNumberVillager;
+    }
+
+    public void addMaxVillager(int maxVillager) {
+        this.foodStock += maxVillager;
     }
 
     @Override
@@ -141,15 +184,15 @@ public class State {
         return "State{" +
                 "numberHouse=" + numberHouse +
                 ", numberBlock=" + numberBlock +
-                ", numberWarhouse=" + numberWarhouse +
+                ", numberStorehouse=" + numberStorehouse +
                 ", numberMill=" + numberMill +
                 ", numberField=" + numberField +
                 ", numberFarm=" + numberFarm +
                 ", daySmithy=" + daySmithy +
                 ", foodStock=" + foodStock +
                 ", maxFood=" + maxFood +
-                ", numberVilliger=" + numberVilliger +
-                ", maxNumberVilliger=" + maxNumberVilliger +
+                ", numberVillager=" + numberVillager +
+                ", maxNumberVillager=" + maxNumberVillager +
                 '}';
     }
 
