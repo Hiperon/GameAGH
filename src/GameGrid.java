@@ -9,7 +9,7 @@ public class GameGrid {
             }
         }
         gameGrid[0][0].setCellContent(Cell.content.HOUSE);
-        gameGrid[0][1].setCellContent(Cell.content.FARM);
+        gameGrid[0][1].setCellContent(Cell.content.FIELD);
     }
 
     public static void main(String[] args) {

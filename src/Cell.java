@@ -3,11 +3,12 @@ public class Cell {
         FREE,
         HOUSE,
         BLOCK,
-        SPICHLERZ,
+        STOREHOUSE,
         SMITHY,
         MILL,
-        FIELD,
-        FARM
+        FIELD,// zboże - 4
+        FARM, // świnki - 7
+        BUILD // On this one we are building something
     }
     private content CellContent;
 
