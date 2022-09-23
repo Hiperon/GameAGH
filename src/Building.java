@@ -12,6 +12,13 @@ public abstract class Building {
     private int ySize;
     private int bTime;
 
+    public Building(Cell.content bName, int xSize, int ySize, int bTime) {
+        this.bName = bName;
+        this.xSize = xSize;
+        this.ySize = ySize;
+        this.bTime = bTime;
+    }
+
     public Cell.content getbName() {
         return bName;
     }
@@ -28,5 +35,5 @@ public abstract class Building {
         return bTime;
     }
 
-    public abstract void specialAction();
+    public abstract void specialAction(State state);
 }

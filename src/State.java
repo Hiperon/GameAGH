@@ -2,6 +2,7 @@
  * state of the game - variables from game at this moment
  */
 public class State {
+    private int dayNumber = 0;
     private int numberHouse = 1;
     private int numberBlock = 0;
     private int numberStorehouse = 0;
@@ -9,7 +10,7 @@ public class State {
     private int numberField = 1;
     private int numberFarm = 0;
 
-    private class SmithyNumber{
+    public class SmithyNumber{
         /**
          * smithy works once every two days, so I need to know how many Smiths will work on even days
          * And how many work on odd days, this class holds both data
@@ -49,11 +50,29 @@ public class State {
         }
     }
     private SmithyNumber daySmithy = new SmithyNumber(); //number of times when smith should work on even or odd days
+    public void addSmithyEven(){
+        daySmithy.addEven();
+    }
+    public void addSmithyOdd(){
+        daySmithy.addOdd();
+    }
+    private int foodStock = 0;
+    private int maxFood = 50;
+    private int numberVillager = 2;
+    private int maxNumberVillager = 5;
 
-    private int foodStock;
-    private int maxFood;
-    private int numberVillager;
-    private int maxNumberVillager;
+    public int getDayNumber() {
+        return dayNumber;
+    }
+
+    public void setDayNumber(int dayNumber) {
+        this.dayNumber = dayNumber;
+    }
+
+    public void addDayNumber() {
+        this.dayNumber +=1;
+    }
+
 
     public int getNumberHouse() {
         return numberHouse;
@@ -155,6 +174,10 @@ public class State {
         this.maxFood = maxFood;
     }
 
+    public void addMaxFood(int maxfood) {
+        this.maxFood += maxfood;
+    }
+
     public int getNumberVillager() {
         return numberVillager;
     }
@@ -176,13 +199,14 @@ public class State {
     }
 
     public void addMaxVillager(int maxVillager) {
-        this.foodStock += maxVillager;
+        this.maxNumberVillager += maxVillager;
     }
 
     @Override
     public String toString() {
         return "State{" +
-                "numberHouse=" + numberHouse +
+                "dayNumber=" + dayNumber +
+                ", numberHouse=" + numberHouse +
                 ", numberBlock=" + numberBlock +
                 ", numberStorehouse=" + numberStorehouse +
                 ", numberMill=" + numberMill +
@@ -199,5 +223,22 @@ public class State {
     public static void main(String[] args) {
         State Test1 = new State();
         System.out.println(Test1.toString());
+        House houseTest = new House();
+        houseTest.specialAction(Test1);
+        System.out.println(Test1.toString());
+        Block blockTest = new Block();
+        blockTest.specialAction(Test1);
+        System.out.println(Test1.toString());
+        Storehouse storehouseTest = new Storehouse();
+        storehouseTest.specialAction(Test1);
+        System.out.println(Test1.toString());
+        Smithy smithyTest = new Smithy();
+        smithyTest.specialAction(Test1);
+        System.out.println(Test1.toString());
+        Test1.addDayNumber();
+        Smithy smithyTest2 = new Smithy();
+        smithyTest2.specialAction(Test1);
+        System.out.println(Test1.toString());
+
     }
 }
