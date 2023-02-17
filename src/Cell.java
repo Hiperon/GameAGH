@@ -37,9 +37,9 @@ public class Cell {
 
     public static void main(String[] args) {
         Cell Test1 = new Cell();
-        System.out.println(Test1.toString());
+        System.out.println(Test1);
         Test1.setCellContent(content.HOUSE);
-        System.out.println(Test1.toString());
+        System.out.println(Test1);
         content test2;
         test2 = Test1.getCellContent();
         System.out.println(test2.toString());
