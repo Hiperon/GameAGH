@@ -61,6 +61,8 @@ public class State {
     private int numberVillager = 2;
     private int maxNumberVillager = 5;
 
+    private BuildingQue buildingQue = new BuildingQue();
+
     public int getDayNumber() {
         return dayNumber;
     }

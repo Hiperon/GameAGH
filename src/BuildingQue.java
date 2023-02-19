@@ -15,5 +15,6 @@ public class BuildingQue {
     public BuildingQue(List<ConstructionBuilding>[] underConstruction) {
         this.underConstruction = underConstruction;
     }
-    
+
+    public BuildingQue() {}
 }
